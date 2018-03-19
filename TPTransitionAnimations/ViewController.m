@@ -81,7 +81,7 @@
     if (!_b){
         _b = [[BViewController alloc] init];
         _b.transitioningDelegate = self;
-        _b.modalTransitionStyle = UIModalPresentationCustom;
+        _b.modalPresentationStyle = UIModalPresentationCustom;
     }
     return _b;
 }
