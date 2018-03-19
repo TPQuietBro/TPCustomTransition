@@ -23,7 +23,7 @@
         self.dismissBlock = [dismissBlock copy];
         
         self.presentingVc.transitioningDelegate = self;
-        self.presentingVc.modalTransitionStyle = UIModalPresentationCustom;
+        self.presentingVc.modalPresentationStyle = UIModalPresentationCustom;
     }
     return self;
 }
