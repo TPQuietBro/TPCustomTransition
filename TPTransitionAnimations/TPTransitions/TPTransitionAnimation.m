@@ -7,19 +7,32 @@
 //
 
 #import "TPTransitionAnimation.h"
-
+@interface TPTransitionAnimation()
+@property(assign,nonatomic) BOOL presented;
+@property(assign,nonatomic) NSTimeInterval duration;
+@end
 @implementation TPTransitionAnimation
-#pragma mark - init methods
 
-#pragma mark - system delegate
+- (instancetype)initWithDurationTime:(NSTimeInterval)duration presented:(BOOL)presented{
+    self = [super init];
+    if (self) {
+        self.presented = presented;
+        self.duration = duration;
+    }
+    return self;
+}
 
-#pragma mark - custom delegate
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
+    if (self.presented) {
+        UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+        self.presentBlock ? self.presentBlock(toView, transitionContext) : nil;
+    }else{
+        UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+        self.dismissBlock ? self.dismissBlock(fromView, transitionContext) : nil;
+    }
+}
 
-#pragma mark - api methods
-
-#pragma mark - event response
-
-#pragma mark - private
-
-#pragma mark - getter / setter
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
+    return self.duration ? self.duration : 1.0;
+}
 @end

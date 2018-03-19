@@ -13,6 +13,12 @@
 		AFB4FF71205F4513004FCEFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB4FF70205F4513004FCEFE /* Assets.xcassets */; };
 		AFB4FF74205F4513004FCEFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB4FF72205F4513004FCEFE /* LaunchScreen.storyboard */; };
 		AFB4FF77205F4513004FCEFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4FF76205F4513004FCEFE /* main.m */; };
+		AFB4FF7F205F4862004FCEFE /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4FF7E205F4862004FCEFE /* BViewController.m */; };
+		AFB4FF82205F6687004FCEFE /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4FF81205F6687004FCEFE /* CustomViewController.m */; };
+		AFB4FF84205F862C004FCEFE /* fengjing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFB4FF83205F862C004FCEFE /* fengjing.jpg */; };
+		AFB4FF88205FA242004FCEFE /* TPTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4FF87205FA242004FCEFE /* TPTransitionController.m */; };
+		AFB4FF8B205FA26D004FCEFE /* TPTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4FF8A205FA26D004FCEFE /* TPTransitionDelegate.m */; };
+		AFB4FF8E205FA309004FCEFE /* TPTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4FF8D205FA309004FCEFE /* TPTransitionAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,17 @@
 		AFB4FF73205F4513004FCEFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFB4FF75205F4513004FCEFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFB4FF76205F4513004FCEFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AFB4FF7D205F4862004FCEFE /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
+		AFB4FF7E205F4862004FCEFE /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
+		AFB4FF80205F6687004FCEFE /* CustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
+		AFB4FF81205F6687004FCEFE /* CustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
+		AFB4FF83205F862C004FCEFE /* fengjing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fengjing.jpg; sourceTree = "<group>"; };
+		AFB4FF86205FA242004FCEFE /* TPTransitionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPTransitionController.h; sourceTree = "<group>"; };
+		AFB4FF87205FA242004FCEFE /* TPTransitionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPTransitionController.m; sourceTree = "<group>"; };
+		AFB4FF89205FA26D004FCEFE /* TPTransitionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPTransitionDelegate.h; sourceTree = "<group>"; };
+		AFB4FF8A205FA26D004FCEFE /* TPTransitionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPTransitionDelegate.m; sourceTree = "<group>"; };
+		AFB4FF8C205FA309004FCEFE /* TPTransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPTransitionAnimation.h; sourceTree = "<group>"; };
+		AFB4FF8D205FA309004FCEFE /* TPTransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPTransitionAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +75,16 @@
 		AFB4FF66205F4513004FCEFE /* TPTransitionAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				AFB4FF85205FA22F004FCEFE /* TPTransitions */,
 				AFB4FF67205F4513004FCEFE /* AppDelegate.h */,
 				AFB4FF68205F4513004FCEFE /* AppDelegate.m */,
 				AFB4FF6A205F4513004FCEFE /* ViewController.h */,
 				AFB4FF6B205F4513004FCEFE /* ViewController.m */,
+				AFB4FF80205F6687004FCEFE /* CustomViewController.h */,
+				AFB4FF81205F6687004FCEFE /* CustomViewController.m */,
+				AFB4FF83205F862C004FCEFE /* fengjing.jpg */,
+				AFB4FF7D205F4862004FCEFE /* BViewController.h */,
+				AFB4FF7E205F4862004FCEFE /* BViewController.m */,
 				AFB4FF6D205F4513004FCEFE /* Main.storyboard */,
 				AFB4FF70205F4513004FCEFE /* Assets.xcassets */,
 				AFB4FF72205F4513004FCEFE /* LaunchScreen.storyboard */,
@@ -69,6 +92,19 @@
 				AFB4FF76205F4513004FCEFE /* main.m */,
 			);
 			path = TPTransitionAnimations;
+			sourceTree = "<group>";
+		};
+		AFB4FF85205FA22F004FCEFE /* TPTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				AFB4FF86205FA242004FCEFE /* TPTransitionController.h */,
+				AFB4FF87205FA242004FCEFE /* TPTransitionController.m */,
+				AFB4FF89205FA26D004FCEFE /* TPTransitionDelegate.h */,
+				AFB4FF8A205FA26D004FCEFE /* TPTransitionDelegate.m */,
+				AFB4FF8C205FA309004FCEFE /* TPTransitionAnimation.h */,
+				AFB4FF8D205FA309004FCEFE /* TPTransitionAnimation.m */,
+			);
+			path = TPTransitions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +168,7 @@
 				AFB4FF74205F4513004FCEFE /* LaunchScreen.storyboard in Resources */,
 				AFB4FF71205F4513004FCEFE /* Assets.xcassets in Resources */,
 				AFB4FF6F205F4513004FCEFE /* Main.storyboard in Resources */,
+				AFB4FF84205F862C004FCEFE /* fengjing.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,8 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFB4FF6C205F4513004FCEFE /* ViewController.m in Sources */,
+				AFB4FF8E205FA309004FCEFE /* TPTransitionAnimation.m in Sources */,
+				AFB4FF82205F6687004FCEFE /* CustomViewController.m in Sources */,
+				AFB4FF7F205F4862004FCEFE /* BViewController.m in Sources */,
 				AFB4FF77205F4513004FCEFE /* main.m in Sources */,
+				AFB4FF88205FA242004FCEFE /* TPTransitionController.m in Sources */,
 				AFB4FF69205F4513004FCEFE /* AppDelegate.m in Sources */,
+				AFB4FF8B205FA26D004FCEFE /* TPTransitionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +323,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RNL7SY23B3;
 				INFOPLIST_FILE = TPTransitionAnimations/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meum.Test.TPTransitionAnimations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,6 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RNL7SY23B3;
 				INFOPLIST_FILE = TPTransitionAnimations/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meum.Test.TPTransitionAnimations;
 				PRODUCT_NAME = "$(TARGET_NAME)";

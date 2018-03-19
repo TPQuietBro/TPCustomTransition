@@ -7,19 +7,27 @@
 //
 
 #import "CustomViewController.h"
+@interface CustomViewController()
 
+@end
 @implementation CustomViewController
-#pragma mark - init methods
+- (void)presentationTransitionWillBegin{
+    [self.containerView addSubview:self.presentedView];
+}
 
-#pragma mark - system delegate
+- (void)presentationTransitionDidEnd:(BOOL)completed{
+    //添加收手势
+}
 
-#pragma mark - custom delegate
+- (void)dismissalTransitionWillBegin{}
 
-#pragma mark - api methods
 
-#pragma mark - event response
+- (void)dismissalTransitionDidEnd:(BOOL)completed{
+    [self.presentedView removeFromSuperview];
+}
 
-#pragma mark - private
+- (void)containerViewWillLayoutSubviews{
+    self.presentedView.frame = self.containerView.bounds;
+}
 
-#pragma mark - getter / setter
 @end

@@ -7,19 +7,45 @@
 //
 
 #import "TPTransitionDelegate.h"
-
+#import "TPTransitionController.h"
+#import "TPTransitionAnimation.h"
+@interface TPTransitionDelegate()
+@property(strong,nonatomic) UIViewController *presentedVc;
+@property(strong,nonatomic) UIViewController *presentingVc;
+@end
 @implementation TPTransitionDelegate
-#pragma mark - init methods
 
-#pragma mark - system delegate
+- (instancetype)initWithPresentedController:(UIViewController *)presentedController presentingController:(UIViewController *)presentingController presentBlock:(presentAnimation)presentBlock dismissBlock:(dismissAnimation)dismissBlock{
+    if (self = [super init]) {
+        self.presentedVc = presentedController;
+        self.presentingVc = presentingController;
+        self.presentBlock = [presentBlock copy];
+        self.dismissBlock = [dismissBlock copy];
+        
+        self.presentingVc.transitioningDelegate = self;
+        self.presentingVc.modalTransitionStyle = UIModalPresentationCustom;
+    }
+    return self;
+}
 
-#pragma mark - custom delegate
+- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source NS_AVAILABLE_IOS(8_0){
+    TPTransitionController *presentation = [[TPTransitionController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
+    return presentation;
+}
 
-#pragma mark - api methods
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    TPTransitionAnimation *anmation = [[TPTransitionAnimation alloc] initWithDurationTime:self.duration presented:YES];
+    anmation.presentBlock = self.presentBlock;
+    return anmation;
+}
 
-#pragma mark - event response
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+    TPTransitionAnimation *anmation = [[TPTransitionAnimation alloc] initWithDurationTime:self.duration presented:NO];
+    anmation.dismissBlock = self.dismissBlock;
+    return anmation;
+}
 
-#pragma mark - private
-
-#pragma mark - getter / setter
+- (void)beginPresenting{
+    [self.presentedVc presentViewController:self.presentingVc animated:YES completion:nil];
+}
 @end

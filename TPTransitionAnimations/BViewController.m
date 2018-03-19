@@ -23,7 +23,11 @@
 #pragma mark - init methods
 
 - (void)initSubviews{
-    
+    self.view.backgroundColor = [UIColor redColor];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setSubviewsLayout{

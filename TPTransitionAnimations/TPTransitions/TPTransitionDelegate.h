@@ -6,8 +6,15 @@
 //Copyright © 2018年 ICX. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+typedef void(^presentAnimation)(UIView *toView,id<UIViewControllerContextTransitioning> transitionContext);
+typedef void(^dismissAnimation)(UIView *fromView,id<UIViewControllerContextTransitioning> transitionContext);
+@interface TPTransitionDelegate : NSObject <UIViewControllerTransitioningDelegate>
+@property(assign,nonatomic) NSTimeInterval duration;
+@property(strong,nonatomic) presentAnimation presentBlock;
+@property(strong,nonatomic) dismissAnimation dismissBlock;
 
-@interface TPTransitionDelegate : NSObject
+- (instancetype)initWithPresentedController:(UIViewController *)presentedController presentingController:(UIViewController *)presentingController presentBlock:(presentAnimation)presentBlock dismissBlock:(dismissAnimation)dismissBlock;
 
+- (void)beginPresenting;
 @end
