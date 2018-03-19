@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^presentAnimation)(UIView *toView,id<UIViewControllerContextTransitioning> transitionContext);
-typedef void(^dismissAnimation)(UIView *fromView,id<UIViewControllerContextTransitioning> transitionContext);
+typedef void(^presentAnimation)(UIView *toView,id<UIViewControllerContextTransitioning> transitionContext,NSTimeInterval duration);
+typedef void(^dismissAnimation)(UIView *fromView,id<UIViewControllerContextTransitioning> transitionContext,NSTimeInterval duration);
 
 @interface TPTransitionAnimation : NSObject <UIViewControllerAnimatedTransitioning>
 

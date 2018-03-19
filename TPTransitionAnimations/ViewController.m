@@ -88,16 +88,16 @@
 
 - (TPTransitionDelegate *)tp_trasitionDelegate{
     if (!_tp_trasitionDelegate){
-        _tp_trasitionDelegate = [[TPTransitionDelegate alloc] initWithPresentedController:self presentingController:self.b presentBlock:^(UIView *toView, id<UIViewControllerContextTransitioning> transitionContext) {
+        _tp_trasitionDelegate = [[TPTransitionDelegate alloc] initWithPresentedController:self presentingController:self.b presentBlock:^(UIView *toView, id<UIViewControllerContextTransitioning> transitionContext,NSTimeInterval duration) {
             toView.alpha = 0.01;
             toView.backgroundColor = [UIColor orangeColor];
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:duration animations:^{
                 toView.alpha = 1.0;
             }completion:^(BOOL finished) {
                 [transitionContext completeTransition:YES];
             }];
-        } dismissBlock:^(UIView *fromView, id<UIViewControllerContextTransitioning> transitionContext) {
-            [UIView animateWithDuration:0.3 animations:^{
+        } dismissBlock:^(UIView *fromView, id<UIViewControllerContextTransitioning> transitionContext,NSTimeInterval duration) {
+            [UIView animateWithDuration:duration animations:^{
                 fromView.alpha = 0.01;
             }completion:^(BOOL finished) {
                 [transitionContext completeTransition:YES];

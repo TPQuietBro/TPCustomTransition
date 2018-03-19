@@ -25,10 +25,10 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
     if (self.presented) {
         UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-        self.presentBlock ? self.presentBlock(toView, transitionContext) : nil;
+        self.presentBlock ? self.presentBlock(toView, transitionContext,[self transitionDuration:transitionContext]) : nil;
     }else{
         UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-        self.dismissBlock ? self.dismissBlock(fromView, transitionContext) : nil;
+        self.dismissBlock ? self.dismissBlock(fromView, transitionContext,[self transitionDuration:transitionContext]) : nil;
     }
 }
 
