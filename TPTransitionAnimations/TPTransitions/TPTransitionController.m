@@ -14,9 +14,12 @@
 }
 
 - (void)presentationTransitionDidEnd:(BOOL)completed{
-    //添加收手势
+    UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dimissVc)];
+    [self.containerView addGestureRecognizer:tap];
 }
-
+- (void)dimissVc{
+    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)dismissalTransitionWillBegin{}
 
 

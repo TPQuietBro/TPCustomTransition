@@ -29,13 +29,23 @@
                                     <action selector="begin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4v7-bJ-xw6"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fengjing" translatesAutoresizingMaskIntoConstraints="NO" id="WIF-MJ-P1R">
+                                <rect key="frame" x="54" y="85" width="89" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="WIF-MJ-P1R" id="xcA-Rs-Ag1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-85.599999999999994" y="-22.03898050974513"/>
+            <point key="canvasLocation" x="-188" y="-47.226386806596707"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fengjing" width="250" height="199"/>
+    </resources>
 </document>

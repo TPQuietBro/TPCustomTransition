@@ -19,6 +19,12 @@
 		AFB4FF88205FA242004FCEFE /* TPTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4FF87205FA242004FCEFE /* TPTransitionController.m */; };
 		AFB4FF8B205FA26D004FCEFE /* TPTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4FF8A205FA26D004FCEFE /* TPTransitionDelegate.m */; };
 		AFB4FF8E205FA309004FCEFE /* TPTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4FF8D205FA309004FCEFE /* TPTransitionAnimation.m */; };
+		AFEE7A602062627700943E8F /* TPCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE7A542062627700943E8F /* TPCustomButton.m */; };
+		AFEE7A612062627700943E8F /* UIButton+TPCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE7A582062627700943E8F /* UIButton+TPCustom.m */; };
+		AFEE7A622062627700943E8F /* UIView+WalkerFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE7A5B2062627700943E8F /* UIView+WalkerFrame.m */; };
+		AFEE7A632062627700943E8F /* TPCustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE7A5C2062627700943E8F /* TPCustomLabel.m */; };
+		AFEE7A642062627700943E8F /* TPScreenAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE7A5D2062627700943E8F /* TPScreenAdaptor.m */; };
+		AFEE7A652062627700943E8F /* UIView+TPFrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEE7A5E2062627700943E8F /* UIView+TPFrameExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +49,19 @@
 		AFB4FF8A205FA26D004FCEFE /* TPTransitionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPTransitionDelegate.m; sourceTree = "<group>"; };
 		AFB4FF8C205FA309004FCEFE /* TPTransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPTransitionAnimation.h; sourceTree = "<group>"; };
 		AFB4FF8D205FA309004FCEFE /* TPTransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPTransitionAnimation.m; sourceTree = "<group>"; };
+		AFEE7A532062627700943E8F /* UIView+WalkerFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WalkerFrame.h"; sourceTree = "<group>"; };
+		AFEE7A542062627700943E8F /* TPCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCustomButton.m; sourceTree = "<group>"; };
+		AFEE7A552062627700943E8F /* TPScreenAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScreenAdaptor.h; sourceTree = "<group>"; };
+		AFEE7A562062627700943E8F /* TPCustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCustomLabel.h; sourceTree = "<group>"; };
+		AFEE7A572062627700943E8F /* UIView+TPFrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TPFrameExtension.h"; sourceTree = "<group>"; };
+		AFEE7A582062627700943E8F /* UIButton+TPCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TPCustom.m"; sourceTree = "<group>"; };
+		AFEE7A592062627700943E8F /* TPFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPFrame.h; sourceTree = "<group>"; };
+		AFEE7A5A2062627700943E8F /* TPCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCustomButton.h; sourceTree = "<group>"; };
+		AFEE7A5B2062627700943E8F /* UIView+WalkerFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WalkerFrame.m"; sourceTree = "<group>"; };
+		AFEE7A5C2062627700943E8F /* TPCustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCustomLabel.m; sourceTree = "<group>"; };
+		AFEE7A5D2062627700943E8F /* TPScreenAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScreenAdaptor.m; sourceTree = "<group>"; };
+		AFEE7A5E2062627700943E8F /* UIView+TPFrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TPFrameExtension.m"; sourceTree = "<group>"; };
+		AFEE7A5F2062627700943E8F /* UIButton+TPCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+TPCustom.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +94,7 @@
 		AFB4FF66205F4513004FCEFE /* TPTransitionAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				AFEE7A522062627700943E8F /* TPWalkerFrame */,
 				AFB4FF85205FA22F004FCEFE /* TPTransitions */,
 				AFB4FF67205F4513004FCEFE /* AppDelegate.h */,
 				AFB4FF68205F4513004FCEFE /* AppDelegate.m */,
@@ -105,6 +125,26 @@
 				AFB4FF8D205FA309004FCEFE /* TPTransitionAnimation.m */,
 			);
 			path = TPTransitions;
+			sourceTree = "<group>";
+		};
+		AFEE7A522062627700943E8F /* TPWalkerFrame */ = {
+			isa = PBXGroup;
+			children = (
+				AFEE7A532062627700943E8F /* UIView+WalkerFrame.h */,
+				AFEE7A542062627700943E8F /* TPCustomButton.m */,
+				AFEE7A552062627700943E8F /* TPScreenAdaptor.h */,
+				AFEE7A562062627700943E8F /* TPCustomLabel.h */,
+				AFEE7A572062627700943E8F /* UIView+TPFrameExtension.h */,
+				AFEE7A582062627700943E8F /* UIButton+TPCustom.m */,
+				AFEE7A592062627700943E8F /* TPFrame.h */,
+				AFEE7A5A2062627700943E8F /* TPCustomButton.h */,
+				AFEE7A5B2062627700943E8F /* UIView+WalkerFrame.m */,
+				AFEE7A5C2062627700943E8F /* TPCustomLabel.m */,
+				AFEE7A5D2062627700943E8F /* TPScreenAdaptor.m */,
+				AFEE7A5E2062627700943E8F /* UIView+TPFrameExtension.m */,
+				AFEE7A5F2062627700943E8F /* UIButton+TPCustom.h */,
+			);
+			path = TPWalkerFrame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFB4FF6C205F4513004FCEFE /* ViewController.m in Sources */,
+				AFEE7A632062627700943E8F /* TPCustomLabel.m in Sources */,
 				AFB4FF8E205FA309004FCEFE /* TPTransitionAnimation.m in Sources */,
 				AFB4FF82205F6687004FCEFE /* CustomViewController.m in Sources */,
 				AFB4FF7F205F4862004FCEFE /* BViewController.m in Sources */,
@@ -187,6 +228,11 @@
 				AFB4FF88205FA242004FCEFE /* TPTransitionController.m in Sources */,
 				AFB4FF69205F4513004FCEFE /* AppDelegate.m in Sources */,
 				AFB4FF8B205FA26D004FCEFE /* TPTransitionDelegate.m in Sources */,
+				AFEE7A642062627700943E8F /* TPScreenAdaptor.m in Sources */,
+				AFEE7A612062627700943E8F /* UIButton+TPCustom.m in Sources */,
+				AFEE7A622062627700943E8F /* UIView+WalkerFrame.m in Sources */,
+				AFEE7A652062627700943E8F /* UIView+TPFrameExtension.m in Sources */,
+				AFEE7A602062627700943E8F /* TPCustomButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

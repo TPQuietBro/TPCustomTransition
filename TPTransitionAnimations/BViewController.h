@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BViewController : UIViewController
-
+@property(strong,nonatomic) UIImage *image;
+@property(strong,nonatomic) UIImageView *imageView;
+@property(assign,nonatomic) CGRect originalFrame;
 @end

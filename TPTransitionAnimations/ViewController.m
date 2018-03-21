@@ -10,78 +10,52 @@
 #import "BViewController.h"
 #import "TPTransitionDelegate.h"
 #import "TPTransitionController.h"
+#import "TPFrame.h"
 
 @interface ViewController ()
 @property(strong,nonatomic) TPTransitionDelegate *tp_trasitionDelegate;
+
 @property(strong,nonatomic) BViewController *b;
 
 @property(assign,nonatomic) BOOL presented;
+
+@property(strong,nonatomic) UIImage *image;
+
+@property(assign,nonatomic) CGRect originalFrame;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
+    self.image = [UIImage imageNamed:@"fengjing"];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(begin:)];
+    [self.imageView addGestureRecognizer:tap];
+    
 }
-
-
-#pragma mark - delegate
-
-//- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source NS_AVAILABLE_IOS(8_0){
-//    TPTransitionController *presentation = [[TPTransitionController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
-//    return presentation;
-//}
-//
-//- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-////    TPTransitionAnimation *anmation = [[TPTransitionAnimation alloc] initWithDurationTime:self.duration presented:YES];
-////    anmation.presentBlock = self.presentBlock;
-//    self.presented = YES;
-//    return self;
-//}
-//
-//- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-////    TPTransitionAnimation *anmation = [[TPTransitionAnimation alloc] initWithDurationTime:self.duration presented:NO];
-////    anmation.dismissBlock = self.dismissBlock;
-//
-//    self.presented = NO;
-//    return self;
-//}
-//
-//- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
-//    return 1.0;
-//}
-//- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
-//    if (self.presented) {
-//        UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-//        toView.alpha = 0.01;
-//        toView.backgroundColor = [UIColor orangeColor];
-//        [UIView animateWithDuration:0.3 animations:^{
-//            toView.alpha = 1.0;
-//        }completion:^(BOOL finished) {
-//            [transitionContext completeTransition:YES];
-//        }];
-//    }else{
-//        UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-//        [UIView animateWithDuration:0.3 animations:^{
-//            fromView.alpha = 0.01;
-//        }completion:^(BOOL finished) {
-//            [transitionContext completeTransition:YES];
-//        }];
-//    }
-//}
-
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.originalFrame = self.imageView.frame;
+}
 #pragma mark - event
 
 - (IBAction)begin:(id)sender {
-    [self.tp_trasitionDelegate beginPresenting];
-//    [self presentViewController:self.b animated:YES completion:nil];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.imageView.x = 0;
+        self.imageView.y = 0;
+        self.imageView.width = SCREEN_WIDTH;
+        self.imageView.height = SCREEN_HEIGHT;
+    }completion:^(BOOL finished) {
+        self.imageView.frame = self.originalFrame;
+        [self.tp_trasitionDelegate beginPresenting];
+    }];
+    
 }
 - (BViewController *)b{
     if (!_b){
         _b = [[BViewController alloc] init];
-//        _b.transitioningDelegate = self;
-//        _b.modalPresentationStyle = UIModalPresentationCustom;
+        _b.image = self.image;
+        _b.originalFrame = self.originalFrame;
     }
     return _b;
 }
@@ -89,19 +63,9 @@
 - (TPTransitionDelegate *)tp_trasitionDelegate{
     if (!_tp_trasitionDelegate){
         _tp_trasitionDelegate = [[TPTransitionDelegate alloc] initWithPresentedController:self presentingController:self.b presentBlock:^(UIView *toView, id<UIViewControllerContextTransitioning> transitionContext,NSTimeInterval duration) {
-            toView.alpha = 0.01;
-            toView.backgroundColor = [UIColor orangeColor];
-            [UIView animateWithDuration:duration animations:^{
-                toView.alpha = 1.0;
-            }completion:^(BOOL finished) {
-                [transitionContext completeTransition:YES];
-            }];
+            [transitionContext completeTransition:YES];
         } dismissBlock:^(UIView *fromView, id<UIViewControllerContextTransitioning> transitionContext,NSTimeInterval duration) {
-            [UIView animateWithDuration:duration animations:^{
-                fromView.alpha = 0.01;
-            }completion:^(BOOL finished) {
-                [transitionContext completeTransition:YES];
-            }];
+            [transitionContext completeTransition:YES];
         }];
         _tp_trasitionDelegate.duration = 0.5;
     }
