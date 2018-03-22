@@ -18,7 +18,7 @@
     [self.containerView addGestureRecognizer:tap];
 }
 - (void)dimissVc{
-    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)dismissalTransitionWillBegin{}
 
