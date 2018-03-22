@@ -22,6 +22,10 @@
 @property(strong,nonatomic) UIImage *image;
 
 @property(assign,nonatomic) CGRect originalFrame;
+
+@property(strong,nonatomic) UIImageView *cpImageView;
+
+@property(strong,nonatomic) UIColor *originalColor;
 @end
 
 @implementation ViewController
@@ -40,22 +44,14 @@
 #pragma mark - event
 
 - (IBAction)begin:(id)sender {
-    [UIView animateWithDuration:0.5 animations:^{
-        self.imageView.x = 0;
-        self.imageView.y = 0;
-        self.imageView.width = SCREEN_WIDTH;
-        self.imageView.height = SCREEN_HEIGHT;
-    }completion:^(BOOL finished) {
-        self.imageView.frame = self.originalFrame;
-        [self.tp_trasitionDelegate beginPresenting];
-    }];
-    
+    [self.tp_trasitionDelegate beginPresenting];
 }
 - (BViewController *)b{
     if (!_b){
         _b = [[BViewController alloc] init];
         _b.image = self.image;
         _b.originalFrame = self.originalFrame;
+        self.originalColor = _b.view.backgroundColor;
     }
     return _b;
 }
@@ -63,9 +59,29 @@
 - (TPTransitionDelegate *)tp_trasitionDelegate{
     if (!_tp_trasitionDelegate){
         _tp_trasitionDelegate = [[TPTransitionDelegate alloc] initWithPresentedController:self presentingController:self.b presentBlock:^(UIView *toView, id<UIViewControllerContextTransitioning> transitionContext,NSTimeInterval duration) {
-            [transitionContext completeTransition:YES];
+            self.cpImageView = [[UIImageView alloc] initWithImage:self.imageView.image];
+            self.cpImageView.frame = self.originalFrame;
+            toView.backgroundColor = self.originalColor;
+            [toView addSubview:self.cpImageView];
+            [UIView animateWithDuration:0.5 animations:^{
+                self.cpImageView.x = 0;
+                self.cpImageView.y = 0;
+                self.cpImageView.width = SCREEN_WIDTH;
+                self.cpImageView.height = SCREEN_HEIGHT;
+            }completion:^(BOOL finished) {
+                [transitionContext completeTransition:YES];
+            }];
         } dismissBlock:^(UIView *fromView, id<UIViewControllerContextTransitioning> transitionContext,NSTimeInterval duration) {
-            [transitionContext completeTransition:YES];
+            fromView.backgroundColor = [UIColor clearColor];
+            [UIView animateWithDuration:0.5 animations:^{
+                self.cpImageView.x = self.originalFrame.origin.x;
+                self.cpImageView.y = self.originalFrame.origin.y;
+                self.cpImageView.width = self.originalFrame.size.width;
+                self.cpImageView.height = self.originalFrame.size.height;
+            }completion:^(BOOL finished) {
+                [self.cpImageView removeFromSuperview];
+                [transitionContext completeTransition:YES];
+            }];
         }];
         _tp_trasitionDelegate.duration = 0.5;
     }

@@ -24,24 +24,11 @@
 
 - (void)initSubviews{
     self.view.backgroundColor = [UIColor redColor];
-    UIImageView *imageView = [UIImageView new];
-    imageView.userInteractionEnabled = YES;
-    imageView.image = self.image;
-    imageView.frame = self.view.bounds;
-    self.imageView = imageView;
-    [self.view addSubview:imageView];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [UIView animateWithDuration:0.5 animations:^{
-        self.imageView.x = self.originalFrame.origin.x;
-        self.imageView.y = self.originalFrame.origin.y;
-        self.imageView.width = self.originalFrame.size.width;
-        self.imageView.height = self.originalFrame.size.height;
-    }completion:^(BOOL finished) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-        self.imageView.frame = self.view.bounds;
-    }];
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setSubviewsLayout{
